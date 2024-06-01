@@ -1,6 +1,12 @@
+import Posts from "../../features/Posts/Posts.js";
+
 const Home = () => {
     return(
-        <h2>Home</h2>
+        <>
+            <h2>All Posts:</h2>
+            <Posts />
+        </>
+        
     )
 }
 
