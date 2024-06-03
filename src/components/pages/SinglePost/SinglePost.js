@@ -2,6 +2,7 @@ import { getPostById } from "../../../redux/postsReducer.js";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Card, Container, Button } from "react-bootstrap";
+import ModalPage from "../../features/ModalPage/ModalPage.js";
 
 const SinglePost = () => {
     const {postId} = useParams();
@@ -20,7 +21,7 @@ const SinglePost = () => {
             </Card>
             <div>
                 <Button variant="outline-primary">Edit</Button>{' '}
-                <Button variant="outline-danger">Delete</Button>
+                <ModalPage />
             </div>
         </Container>
     )
