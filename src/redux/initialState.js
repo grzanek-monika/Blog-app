@@ -14,7 +14,7 @@ const initialState = {
             shortDescription: 'Short description of the article...',
             content: 'Main content of the article',
             publishedDate: '06-011-2023',
-            author: 'John Doe'
+            author: 'Merry Peter'
       },
         {
             id: '3',
@@ -22,7 +22,7 @@ const initialState = {
             shortDescription: 'Short description of the article...',
             content: 'Main content of the article',
             publishedDate: '02-02-2023',
-            author: 'John Doe'
+            author: 'Amanda Smith'
       }
       
     ]
