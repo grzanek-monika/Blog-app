@@ -15,13 +15,13 @@ const postsReducer = (statePart = [], action) => {
     case 'REMOVE_POST': 
       return statePart.filter(post => post.id !== action.payload);
     case 'ADD_POST': 
-      return [...statePart, {id: shortid(), ...action.payload }]
+      return [...statePart, {id: shortid(), ...action.payload }];
     default:
       return statePart;
   };
 };
 
-export const removePost = payload => ({ type: 'REMOVE_POST', payload });
-export const addPost = payload => ({ type: 'ADD_POST', payload });
+export const removePost = payload => ({ type: REMOVE_POST, payload });
+export const addPost = payload => ({ type: ADD_POST, payload });
 
 export default postsReducer;
