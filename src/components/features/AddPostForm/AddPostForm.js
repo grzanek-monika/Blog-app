@@ -8,14 +8,14 @@ const AddPostForm = () => {
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
     const [publishedDate, setPublishedDate] = useState('');
-    const [description, setDescription] = useState('');
+    const [shortDescription, setShortDescription] = useState('');
     const [content, setContent] = useState('');
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const add = e => {
         e.preventDefault();
-        dispatch(addPost({title, author, publishedDate, description, content}));
+        dispatch(addPost({title, author, publishedDate, shortDescription, content}));
         navigate('/');
     }
     return(
@@ -34,7 +34,7 @@ const AddPostForm = () => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicDescription">
                 <Form.Label>Short description:</Form.Label>
-                <Form.Control as="textarea" placeholder="Leave a comment here" rows={3} style={{width: '75%'}} value={description} onChange={e => setDescription(e.target.value)} />
+                <Form.Control as="textarea" placeholder="Leave a comment here" rows={3} style={{width: '75%'}} value={shortDescription} onChange={e => setShortDescription(e.target.value)} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicContent">
                 <Form.Label>Main content:</Form.Label>
