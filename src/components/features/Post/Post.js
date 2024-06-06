@@ -5,8 +5,8 @@ import { Card, Container, Button } from "react-bootstrap";
 import ModalPage from "../ModalPage/ModalPage.js";
 
 const Post = () => {
-    const {postId} = useParams();
-    const postData = useSelector(state => getPostById(state, postId));
+    const {id} = useParams();
+    const postData = useSelector(state => getPostById(state, id));
     if(!postData) return <Navigate to="/" />
     else return(
         <Container className="d-flex justify-content-around">
@@ -21,7 +21,7 @@ const Post = () => {
                 </Card.Body>
             </Card>
             <div>
-                <Button as={NavLink} to={`/post/edit/${postId}`} variant="outline-primary">Edit</Button>{' '}
+                <Button as={NavLink} to={`/post/edit/${id}`} variant="outline-primary">Edit</Button>{' '}
                 <ModalPage id={postData.id} />
             </div>
         </Container>
