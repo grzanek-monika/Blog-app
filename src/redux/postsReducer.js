@@ -13,11 +13,11 @@ const EDIT_POST = createActionName('EDIT_POST');
 // action creators
 const postsReducer = (statePart = [], action) => {
   switch (action.type) {
-    case 'REMOVE_POST': 
+    case REMOVE_POST: 
       return statePart.filter(post => post.id !== action.payload);
-    case 'ADD_POST': 
+    case ADD_POST: 
       return [...statePart, {id: shortid(), ...action.payload }];
-    case 'EDIT_POST':
+    case EDIT_POST:
       return statePart.map(post => (post.id === action.payload.id ? { ...post, ...action.payload } : post));
     default:
       return statePart;
