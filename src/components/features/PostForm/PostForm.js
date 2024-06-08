@@ -2,12 +2,15 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import ReactQuill from 'react-quill';
+import DatePicker from "react-datepicker";
 import 'react-quill/dist/quill.snow.css';
+
+import "react-datepicker/dist/react-datepicker.css";
 
 const PostForm = ({action, actionText, ...props}) => {
     const [title, setTitle] = useState(props.title || '');
     const [author, setAuthor] = useState(props.author || '');
-    const [publishedDate, setPublishedDate] = useState(props.publishedDate || '');
+    const [publishedDate, setPublishedDate] = useState(props.publishedDate || new Date());
     const [shortDescription, setShortDescription] = useState(props.shortDescription ||'');
     const [content, setContent] = useState(props.content || '');
 
@@ -29,7 +32,7 @@ const PostForm = ({action, actionText, ...props}) => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPublished">
                     <Form.Label>Published:</Form.Label>
-                    <Form.Control type="text" placeholder="Published" style={{width: '25%'}} value={publishedDate} onChange={e => setPublishedDate(e.target.value)}/>
+                    <Form.Control type="text" placeholder="Published" style={{width: '25%'}} selected={publishedDate} onChange={(date) => setPublishedDate(date)}/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicDescription">
                     <Form.Label>Short description:</Form.Label>
