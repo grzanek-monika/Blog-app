@@ -13,6 +13,7 @@ const Posts = () => {
                     <Card.Text><b>Author: </b>{post.author}</Card.Text>
                     <Card.Text><b>Published: </b>{post.publishedDate}</Card.Text>
                     <Card.Text>{post.shortDescription}</Card.Text>
+                    <Card.Text ><p dangerouslySetInnerHTML={{ __html: post.content }} /></Card.Text>
                     <Button variant="primary">Read more</Button>
                 </Card.Body>
             </Card>)}
