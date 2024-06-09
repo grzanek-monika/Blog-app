@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useParams, Navigate, NavLink } from "react-router-dom";
 import { Card, Container, Button } from "react-bootstrap";
 import ModalPage from "../ModalPage/ModalPage.js";
+import { dateToStr } from "../../../utils/dateToString.js";
 
 const Post = () => {
     const {id} = useParams();
@@ -15,7 +16,7 @@ const Post = () => {
                 <Card.Body>
                     <Card.Text>
                         <p><b>Author: </b>{postData.author}</p>
-                        <p><b>Published: </b>{postData.publishedDate}</p>
+                        <p><b>Published: </b>{dateToStr(postData.publishedDate)}</p>
                         <p dangerouslySetInnerHTML={{ __html: postData.content }} />
                     </Card.Text>
                 </Card.Body>
