@@ -4,6 +4,8 @@ import Home from './components/pages/Home/Home.js';
 import About from './components/pages/About/About.js';
 import SinglePost from './components/pages/SinglePost/SinglePost.js';
 import EditPost from './components/pages/EditPost/EditPost.js';
+import Categories from './components/pages/Categories/Categories.js';
+import PostsOfCategory from './components/pages/PostsOfCategory/PostsOfCategory.js';
 import AddPost from './components/pages/AddPost/AddPost.js';
 import { Container } from 'react-bootstrap';
 import Header from './components/views/Header/Header.js';
@@ -20,6 +22,9 @@ function App() {
           <Route path='/post/:id' element={<SinglePost />} />
           <Route path='/post/add' element={<AddPost />} />
           <Route path='/post/edit/:id' element={<EditPost />} />
+          <Route path='/categories' element={<Categories />} />
+          <Route path='/categories/:value' element={<PostsOfCategory />} />
+
         </Routes>
         <Footer />
       </Container>
