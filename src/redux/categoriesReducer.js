@@ -1,4 +1,5 @@
 // selectors
+export const getAllCategories = (state => state.categories);
 
 // actions
 const createActionName = actionName => `app/categories/${actionName}`;

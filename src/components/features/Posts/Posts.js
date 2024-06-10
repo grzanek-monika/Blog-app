@@ -3,9 +3,11 @@ import { useSelector } from "react-redux";
 import { Card, Container, Button} from "react-bootstrap";
 import { dateToStr } from "../../../utils/dateToString";
 import { NavLink } from "react-router-dom";
+//import { getAllCategories } from "../../../redux/categoriesReducer";
 
 const Posts = () => {
     const posts = useSelector(getAllPosts);
+    //const categories = useSelector(getAllCategories);
 
     return(
         <Container className="d-flex justify-content-between flex-wrap">
@@ -14,6 +16,7 @@ const Posts = () => {
                     <Card.Title><h3>{post.title}</h3></Card.Title>
                     <Card.Text><b>Author: </b>{post.author}</Card.Text>
                     <Card.Text><b>Published: </b>{dateToStr(post.publishedDate)}</Card.Text>
+                    <Card.Text><b>Category: </b>{post.category}</Card.Text>
                     <Card.Text>{post.shortDescription}</Card.Text>
                     <Button as={NavLink} to={`/post/${post.id}`} variant="primary">Read more</Button>
                 </Card.Body>

@@ -6,16 +6,21 @@ import DatePicker from "react-datepicker";
 import 'react-quill/dist/quill.snow.css';
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
+import { getAllCategories } from "../../../redux/categoriesReducer";
+import { useSelector } from "react-redux";
 
 const PostForm = ({action, actionText, ...props}) => {
 
     const [title, setTitle] = useState(props.title || '');
     const [author, setAuthor] = useState(props.author || '');
     const [publishedDate, setPublishedDate] = useState(props.publishedDate || '');
+    const [category, setCategory] = useState(props.category || '');
     const [shortDescription, setShortDescription] = useState(props.shortDescription ||'');
     const [content, setContent] = useState(props.content || '');
     const [contentError, setContentError] = useState(false);
     const [dateError, setDateError] = useState(false);
+
+    const categories = useSelector(getAllCategories);
 
     const { register, handleSubmit: validate, formState: { errors } } = useForm();
 
@@ -23,7 +28,7 @@ const PostForm = ({action, actionText, ...props}) => {
         setContentError(!content);
         setDateError(!publishedDate);
         if(content && publishedDate) {
-            action({title, author, publishedDate, shortDescription, content})
+            action({title, author, publishedDate, category, shortDescription, content})
         }
     }
 
@@ -68,6 +73,16 @@ const PostForm = ({action, actionText, ...props}) => {
                             This field can't be empty.
                         </small>
                     }
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicCategory">
+                    <Form.Label>Category:</Form.Label>
+                    <Form.Select aria-label="Default select example" 
+                        style={{width: '25%'}}
+                        value={category}
+                        onChange={e => setCategory(e.target.value)} >
+                        <option>Select category...</option>
+                        {categories.map(postCategory => <option value={postCategory}>{postCategory}</option>)}
+                    </Form.Select>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicDescription">
                     <Form.Label>Short description:</Form.Label>
