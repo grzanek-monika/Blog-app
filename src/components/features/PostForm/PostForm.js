@@ -20,10 +20,10 @@ const PostForm = ({action, actionText, ...props}) => {
     const { register, handleSubmit: validate, formState: { errors } } = useForm();
 
     const handleSubmit = e => {
-        setContentError(!content)
-        setDateError(!publishedDate)
+        setContentError(!content);
+        setDateError(!publishedDate);
         if(content && publishedDate) {
-        action({title, author, publishedDate, shortDescription, content})
+            action({title, author, publishedDate, shortDescription, content})
         }
     }
 
