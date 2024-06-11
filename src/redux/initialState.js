@@ -16,7 +16,7 @@ const initialState = {
         content: 'Main content of the article',
         publishedDate: new Date('02-07-2023'),
         author: 'Merry Peter',
-        category: 'Movies',
+        category: 'News',
     },
     {
         id: '3',

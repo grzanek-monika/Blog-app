@@ -23,7 +23,7 @@ function App() {
           <Route path='/post/add' element={<AddPost />} />
           <Route path='/post/edit/:id' element={<EditPost />} />
           <Route path='/categories' element={<Categories />} />
-          <Route path='/categories/:value' element={<PostsOfCategory />} />
+          <Route path='/categories/:category' element={<PostsOfCategory />} />
 
         </Routes>
         <Footer />
