@@ -115,5 +115,6 @@ const PostForm = ({action, actionText, ...props}) => {
 PostForm.propTypes = {
     action: PropTypes.func.isRequired,
     actionText: PropTypes.string.isRequired,
+    props: PropTypes.object.isRequired
 }
 export default PostForm;

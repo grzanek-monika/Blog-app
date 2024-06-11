@@ -29,5 +29,4 @@ const Post = () => {
         </Container>
     )
 }
-
 export default Post;

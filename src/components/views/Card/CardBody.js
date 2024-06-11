@@ -2,6 +2,7 @@ import { Card } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { dateToStr } from "../../../utils/dateToString";
 import {Button} from "react-bootstrap";
+import PropTypes from 'prop-types';
 
 const CardBody = (props) => {
     return(
@@ -18,6 +19,10 @@ const CardBody = (props) => {
     </Card>
 
     )
+}
+
+CardBody.propTypes = {
+    props: PropTypes.object.isRequired,
 }
 
 export default CardBody;

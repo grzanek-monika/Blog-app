@@ -2,6 +2,7 @@ import { Modal, Button } from "react-bootstrap";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { removePost } from "../../../redux/postsReducer";
+import PropTypes from 'prop-types';
 
 const ModalPage = ({id}) => {
 
@@ -43,5 +44,9 @@ const ModalPage = ({id}) => {
         </>
     )
 }
+ModalPage.propTypes = {
+    id: PropTypes.string.isRequired,
+}
+
 
 export default ModalPage;
