@@ -1,7 +1,11 @@
+import { useParams } from "react-router-dom";
+import { getPostByCategory } from "../../../redux/postsReducer";
+import { useSelector } from "react-redux";
+import Posts from "../../features/Posts/Posts.js";
+
+
 const PostsOfCategory = () => {
-    return(
-        <h2>Category: </h2>
-    )
+ 
 }
 
 export default PostsOfCategory;
