@@ -10,8 +10,13 @@ import AddPost from './components/pages/AddPost/AddPost.js';
 import { Container } from 'react-bootstrap';
 import Header from './components/views/Header/Header.js';
 import Footer from './components/views/Footer/Footer.js';
+import { useEffect } from 'react';
+import { fetchPosts } from './redux/postsReducer.js';
+import { useDispatch } from 'react-redux';
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => dispatch(fetchPosts()), [dispatch]);
   return (
     <main>
       <Container>

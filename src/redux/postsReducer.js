@@ -1,4 +1,5 @@
 import shortid from "shortid";
+import { API_URL } from "../config";
 
 //selectors
 export const getAllPosts = (state => state.posts);
@@ -10,10 +11,13 @@ const createActionName = actionName => `app/posts/${actionName}`;
 const REMOVE_POST = createActionName('REMOVE_POST');
 const ADD_POST = createActionName('ADD_POST');
 const EDIT_POST = createActionName('EDIT_POST');
+const UPDATE_POSTS= createActionName('UPDATE_POSTS');
 
 // action creators
 const postsReducer = (statePart = [], action) => {
   switch (action.type) {
+    case UPDATE_POSTS:
+      return  [...action.payload];
     case REMOVE_POST: 
       return statePart.filter(post => post.id !== action.payload);
     case ADD_POST: 
@@ -25,8 +29,17 @@ const postsReducer = (statePart = [], action) => {
   };
 };
 
+export const updatePosts = payload => ({ type: UPDATE_POSTS, payload });
 export const removePost = payload => ({ type: REMOVE_POST, payload });
 export const addPost = payload => ({ type: ADD_POST, payload });
 export const editPost = payload => ({ type: EDIT_POST, payload });
+
+export const fetchPosts = () => {
+  return (dispatch) => {
+    fetch(`${API_URL}/posts`)
+      .then(res => res.json())
+      .then(posts => dispatch(updatePosts(posts)));
+  }
+}
 
 export default postsReducer;
