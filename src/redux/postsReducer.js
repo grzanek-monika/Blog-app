@@ -42,4 +42,19 @@ export const fetchPosts = () => {
   }
 }
 
+export const addPostRequest = (newPost) => {
+  return (dispatch) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(newPost)
+    };
+    fetch(`${API_URL}/posts`, options)
+      .then(() => dispatch(addPost(newPost)));
+
+  }
+}
+
 export default postsReducer;

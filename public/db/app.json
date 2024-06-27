@@ -1,34 +1,45 @@
 {
-    "posts":[
-        {
-            "id":"1",
-            "title":"Article title",
-            "shortDescription":"Short description of the article...",
-            "content":"Main content of the article",
-            "publishedDate":"2023-02-01",
-            "author":"John Doe",
-            "category":"Sport"
-        },
-        {
-            "id":"2",
-            "title":"Article title II",
-            "shortDescription":"Short description of the article...",
-            "content":"Main content of the article",
-            "publishedDate":"2023-02-06",
-            "author":"Merry Peter",
-            "category":"News"
-        },
-        {
-            "id":"3",
-            "title":"Article title III",
-            "shortDescription":"Short description of the article...",
-            "content":"Main content of the article",
-            "publishedDate":"2024-02-01",
-            "author":"Amanda Smith",
-            "category":"News"
-        }
-    ],
-    "categories":[
-        "Sport","News","Movies"
-    ]
+  "posts": [
+    {
+      "id": "1",
+      "title": "Article title",
+      "shortDescription": "Short description of the article...",
+      "content": "Main content of the article",
+      "publishedDate": "2023-02-01",
+      "author": "John Doe",
+      "category": "Sport"
+    },
+    {
+      "id": "2",
+      "title": "Article title II",
+      "shortDescription": "Short description of the article...",
+      "content": "Main content of the article",
+      "publishedDate": "2023-02-06",
+      "author": "Merry Peter",
+      "category": "News"
+    },
+    {
+      "id": "3",
+      "title": "Article title III",
+      "shortDescription": "Short description of the article...",
+      "content": "Main content of the article",
+      "publishedDate": "2024-02-01",
+      "author": "Amanda Smith",
+      "category": "News"
+    },
+    {
+      "title": "Hello",
+      "author": "Emilly Blue",
+      "publishedDate": "2024-06-03T22:00:00.000Z",
+      "category": "Movies",
+      "shortDescription": "ncwuqwndunwqdndqewewfedqw",
+      "content": "<p>wqddqddwq</p>",
+      "id": "yRZ2B_v"
+    }
+  ],
+  "categories": [
+    "Sport",
+    "News",
+    "Movies"
+  ]
 }

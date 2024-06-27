@@ -1,6 +1,6 @@
 import PostForm from "../PostForm/PostForm.js";
 import { useDispatch } from "react-redux";
-import { addPost } from "../../../redux/postsReducer";
+import { addPostRequest } from "../../../redux/postsReducer";
 import { useNavigate } from "react-router-dom";
 
 const AddPostForm = () => {
@@ -9,7 +9,7 @@ const AddPostForm = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const add = post => {
-        dispatch(addPost(post));
+        dispatch(addPostRequest(post));
         navigate('/');
     }
     return(
