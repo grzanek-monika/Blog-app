@@ -2,7 +2,7 @@ import PostForm from "../PostForm/PostForm.js";
 import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getPostById } from "../../../redux/postsReducer.js";
-import { editPost } from "../../../redux/postsReducer.js";
+import { editPostRequest } from "../../../redux/postsReducer.js";
 
 const EditPostForm = () => {
     const {id} = useParams();
@@ -10,7 +10,7 @@ const EditPostForm = () => {
     const dispatch = useDispatch();
     const postToEdit = useSelector(state => getPostById(state, id));
     const edit = postToEdit => {
-        dispatch(editPost({...postToEdit, id}));
+        dispatch(editPostRequest({...postToEdit, id}));
         navigate('/');
     }
 

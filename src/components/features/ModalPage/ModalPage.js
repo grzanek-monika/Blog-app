@@ -1,16 +1,12 @@
 import { Modal, Button } from "react-bootstrap";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { removePost } from "../../../redux/postsReducer";
+
 import PropTypes from 'prop-types';
 
-const ModalPage = ({id}) => {
+const ModalPage = ({action}) => {
 
-    const dispatch = useDispatch();
-    const remove = e => {
-        e.preventDefault();
-        dispatch(removePost(id));
-    }
+  
+
 
     const [show, setShow] = useState(false);
 
@@ -38,7 +34,7 @@ const ModalPage = ({id}) => {
                     <Button variant="secondary" onClick={handleClose}>
                         Cancel
                     </Button>
-                    <Button variant="primary" onClick={remove}>Remove</Button>
+                    <Button variant="primary" onClick={action}>Remove</Button>
                 </Modal.Footer>
             </Modal>
         </>

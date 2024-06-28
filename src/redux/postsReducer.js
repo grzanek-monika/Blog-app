@@ -57,4 +57,31 @@ export const addPostRequest = (newPost) => {
   }
 }
 
+export const editPostRequest = (newPost) => {
+  return (dispatch) => {
+    const options = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newPost)
+    }
+    fetch(`${API_URL}/posts/${newPost.id}`, options)
+      .then(() => dispatch(editPost(newPost)));
+  }
+}
+
+export const removePostRequest = (postToRemove) => {
+  return (dispatch) => {
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    fetch(`${API_URL}/posts/${postToRemove}`, options)
+      .then(() => dispatch(removePost(postToRemove))); 
+  }
+}
+
 export default postsReducer;

@@ -4,10 +4,18 @@ import { useParams, Navigate, NavLink } from "react-router-dom";
 import { Card, Container, Button } from "react-bootstrap";
 import ModalPage from "../ModalPage/ModalPage.js";
 import { dateToStr } from "../../../utils/dateToString.js";
+import { useDispatch } from "react-redux";
+import { removePostRequest } from "../../../redux/postsReducer";
 
 const Post = () => {
     const {id} = useParams();
     const postData = useSelector(state => getPostById(state, id));
+
+    const dispatch = useDispatch();
+    const remove = e => {
+        e.preventDefault();
+        dispatch(removePostRequest(postData.id));
+    }
     if(!postData) return <Navigate to="/" />
     else return(
         <Container className="d-flex justify-content-around">
@@ -24,7 +32,7 @@ const Post = () => {
             </Card>
             <div>
                 <Button as={NavLink} to={`/post/edit/${id}`} variant="outline-primary">Edit</Button>{' '}
-                <ModalPage id={postData.id} />
+                <ModalPage action={remove} />
             </div>
         </Container>
     )
