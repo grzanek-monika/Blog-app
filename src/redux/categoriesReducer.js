@@ -31,6 +31,20 @@ export const fetchCategories = () => {
     }
 }
 
+export const addCategoryRequest = (newCategory) => {
+    return (dispatch) => {
+        const options = {
+            method: 'POST', 
+            headers: {
+              'Content-Type': 'application/json'
+            }, 
+            body: JSON.stringify(newCategory)
+          };
+        fetch(`${API_URL}/categories/${newCategory}`, options)
+            .then(() => dispatch(addCategory(newCategory)));
+    }
+}
+
 
 
 

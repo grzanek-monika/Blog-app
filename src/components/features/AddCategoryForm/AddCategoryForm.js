@@ -1,14 +1,14 @@
 import { Form, ListGroup, Button } from "react-bootstrap";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addCategory } from "../../../redux/categoriesReducer";
+import { addCategoryRequest } from "../../../redux/categoriesReducer";
 
 const AddCategoryForm = () => {
     const [category, setCategory] = useState('');
     const dispatch = useDispatch();
     const add = e => {
         e.preventDefault();
-        dispatch(addCategory(category));
+        dispatch(addCategoryRequest(category));
         setCategory('');
     }
     return(
