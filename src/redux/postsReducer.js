@@ -1,4 +1,4 @@
-import shortid from "shortid";
+import { nanoid } from "nanoid";
 import { API_URL } from "../config";
 
 //selectors
@@ -21,7 +21,7 @@ const postsReducer = (statePart = [], action) => {
     case REMOVE_POST: 
       return statePart.filter(post => post.id !== action.payload);
     case ADD_POST: 
-      return [...statePart, {id: shortid(), ...action.payload }];
+      return [...statePart, {id: nanoid(), ...action.payload }];
     case EDIT_POST:
       return statePart.map(post => (post.id === action.payload.id ? { ...post, ...action.payload } : post));
     default:
