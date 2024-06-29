@@ -26,15 +26,6 @@
       "publishedDate": "2024-02-01",
       "author": "Amanda Smith",
       "category": "News"
-    },
-    {
-      "title": "Hello",
-      "author": "Emilly Blue",
-      "publishedDate": "2024-06-03T22:00:00.000Z",
-      "category": "",
-      "shortDescription": "Short description of article...",
-      "content": "<p>test</p>",
-      "id": "yRZ2B_v"
     }
   ],
   "categories": [

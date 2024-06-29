@@ -1,8 +1,6 @@
 const initialState = {
   posts: [],
-  categories: [
-    'Sport', 'News', 'Movies'
-  ]
+  categories: []
 }
 
 
