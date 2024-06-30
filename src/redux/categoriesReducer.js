@@ -38,7 +38,7 @@ export const addCategoryRequest = (newCategory) => {
             headers: {
               'Content-Type': 'application/json'
             }, 
-            body: JSON.stringify(newCategory)
+            body: newCategory
           };
         fetch(`${API_URL}/categories`, options)
             .then(() => {
