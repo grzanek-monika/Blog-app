@@ -40,10 +40,13 @@ export const addCategoryRequest = (newCategory) => {
             }, 
             body: JSON.stringify(newCategory)
           };
-        fetch(`${API_URL}/categories/${newCategory}`, options)
-            .then(() => dispatch(addCategory(newCategory)));
+        fetch(`${API_URL}/categories`, options)
+            .then(() => {
+                dispatch(addCategory(newCategory))
+                console.log('category', newCategory)});
     }
 }
+
 
 
 

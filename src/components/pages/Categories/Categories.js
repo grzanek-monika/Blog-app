@@ -8,7 +8,7 @@ import AddCategoryForm from "../../features/AddCategoryForm/AddCategoryForm";
 
 const Categories = () => {
     const dispatch= useDispatch();
-    
+    useEffect(() => dispatch(fetchCategories()), [dispatch]);
     const categories = useSelector(getAllCategories);
     return(
         <Container >

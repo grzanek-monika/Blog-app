@@ -18,7 +18,6 @@ import { fetchCategories } from './redux/categoriesReducer.js';
 function App() {
   const dispatch = useDispatch();
   useEffect(() => dispatch(fetchPosts()), [dispatch]);
-  useEffect(() => dispatch(fetchCategories()), [dispatch]);
 
   return (
     <main>
