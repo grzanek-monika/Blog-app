@@ -81,7 +81,7 @@ const PostForm = ({action, actionText, ...props}) => {
                         value={category}
                         onChange={e => setCategory(e.target.value)} >
                         <option>Select category...</option>
-                        {categories.map(postCategory => <option value={postCategory}>{postCategory}</option>)}
+                        {categories.map(postCategory => <option value={postCategory.category}>{postCategory.category}</option>)}
                     </Form.Select>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicDescription">

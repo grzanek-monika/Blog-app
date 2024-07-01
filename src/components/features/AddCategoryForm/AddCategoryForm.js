@@ -8,7 +8,7 @@ const AddCategoryForm = () => {
     const dispatch = useDispatch();
     const add = e => {
         e.preventDefault();
-        dispatch(addCategoryRequest(category));
+        dispatch(addCategoryRequest({category}));
         setCategory('');
     }
     return(
