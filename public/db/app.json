@@ -39,13 +39,28 @@
   ],
   "categories": [
     {
+      "id": "1",
       "category": "Sport"
     },
     {
+      "id": "2",
       "category": "News"
     },
     {
+      "id": "3",
       "category": "Movies"
+    },
+    {
+      "category": "Art",
+      "id": "7F0uQGq"
+    },
+    {
+      "category": "Cars",
+      "id": "NfDSMqT"
+    },
+    {
+      "category": "Books",
+      "id": "5qYgXMU"
     }
   ]
 }

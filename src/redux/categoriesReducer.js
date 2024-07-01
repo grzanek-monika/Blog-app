@@ -1,4 +1,5 @@
 import { API_URL } from "../config";
+import { nanoid } from "nanoid";
 
 // selectors
 export const getAllCategories = (state => state.categories);
@@ -14,7 +15,7 @@ const categoriesReducer = (statePart = [], action) => {
         case UPDATE_CATEGORIES:
             return  [...action.payload];
         case ADD_CATEGORY:
-            return [...statePart, {...action.payload}];
+            return [...statePart, {id: nanoid(), ...action.payload}];
         default:
         return statePart;
     };  
@@ -40,9 +41,8 @@ export const addCategoryRequest = (newCategory) => {
             body: JSON.stringify(newCategory)
           };
         fetch(`${API_URL}/categories`, options)
-            .then(() => {
-                dispatch(addCategory(newCategory))
-                console.log('category', newCategory)});
+            .then(() => 
+                dispatch(addCategory(newCategory)));
     }
 }
 
