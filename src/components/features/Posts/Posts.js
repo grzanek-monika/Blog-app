@@ -1,7 +1,6 @@
 import { getAllPosts } from "../../../redux/postsReducer";
 import { useSelector } from "react-redux";
 import { Container} from "react-bootstrap";
-
 import CardBody from "../../views/Card/CardBody.js";
 
 const Posts = () => {
