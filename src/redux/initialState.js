@@ -1,6 +1,7 @@
 const initialState = {
   posts: [],
-  categories: []
+  categories: [],
+  pending: false
 }
 
 

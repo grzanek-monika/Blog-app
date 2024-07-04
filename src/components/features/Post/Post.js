@@ -18,8 +18,8 @@ const Post = () => {
     }
     if(!postData) return <Navigate to="/" />
     else return(
-        <Container className="d-flex justify-content-around">
-            <Card style={{border: 'white'}} >
+        <Container className="m-5 p-4 d-flex justify-content-around">
+            <Card className="border-0" >
                 <h2>{postData.title}</h2>
                 <Card.Body>
                     <Card.Text>

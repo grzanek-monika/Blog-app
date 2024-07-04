@@ -8,6 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
 import { getAllCategories } from "../../../redux/categoriesReducer";
 import { useSelector } from "react-redux";
+import styles from './PostForm.module.scss';
 
 const PostForm = ({action, actionText, ...props}) => {
 
@@ -77,7 +78,7 @@ const PostForm = ({action, actionText, ...props}) => {
                 <Form.Group className="mb-3" controlId="formBasicCategory">
                     <Form.Label>Category:</Form.Label>
                     <Form.Select aria-label="Default select example" 
-                        style={{width: '25%'}}
+                        className="w-25"
                         value={category}
                         onChange={e => setCategory(e.target.value)} >
                         <option>Select category...</option>
@@ -91,7 +92,7 @@ const PostForm = ({action, actionText, ...props}) => {
                         as="textarea" 
                         placeholder="Leave a comment here" 
                         rows={3} 
-                        style={{width: '75%'}} 
+                        className="w-75"
                         value={shortDescription} 
                         onChange={e => setShortDescription(e.target.value)} />
                     {errors.shortDescription && 
@@ -100,13 +101,13 @@ const PostForm = ({action, actionText, ...props}) => {
                         </small>
                     }
                 </Form.Group>
-                <ReactQuill theme="snow" value={content} onChange={setContent}/>   
+                <ReactQuill className={styles.qlEditor} theme="snow" value={content} onChange={setContent}/>   
                 {contentError && 
                         <small className="d-block form-text text-danger mt-2">
                             This field can't be empty.
                         </small>
-                    }
-                <Button type="submit">{actionText}</Button>
+                }
+                <Button className="mt-5" type="submit">{actionText}</Button>
             </Form>
         </>
     )

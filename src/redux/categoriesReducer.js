@@ -1,5 +1,6 @@
 import { API_URL } from "../config";
 import { nanoid } from "nanoid";
+import { updatePending } from "./pendingReducer";
 
 // selectors
 export const getAllCategories = (state => state.categories);
@@ -27,12 +28,16 @@ export const fetchCategories = () => {
     return (dispatch) => {
         fetch(`${API_URL}/categories`)
             .then(res => res.json())
-            .then(categories => dispatch(updateCategories(categories)))
+            .then(categories =>  {
+                dispatch(updateCategories(categories));
+                dispatch(updatePending(false));
+            })
     }
 }
 
 export const addCategoryRequest = (newCategory) => {
     return (dispatch) => {
+        dispatch(updatePending(true))
         const options = {
             method: 'POST', 
             headers: {

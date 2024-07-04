@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 const CardBody = (props) => {
     return(
 
-    <Card key={props.id} to={`/post/:id`} style={{ width: '20rem', margin: '2%' }} >
+    <Card key={props.id} className="m-4 w-25" >
         <Card.Body>
             <Card.Title><h3>{props.title}</h3></Card.Title>
             <Card.Text><b>Author: </b>{props.author}</Card.Text>

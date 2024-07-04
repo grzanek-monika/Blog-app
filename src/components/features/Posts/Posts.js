@@ -8,7 +8,7 @@ const Posts = () => {
 
     return(
         <Container className="d-flex flex-wrap">
-            {posts.map(post => <CardBody key={post.id} {...post} style={{ width: '20rem' }} />)}
+            {posts.map(post => <CardBody key={post.id} {...post}  />)}
         </Container>
     )
 }

@@ -3,11 +3,13 @@ import { thunk } from 'redux-thunk';
 import initialState from './initialState';
 import postsReducer from './postsReducer.js';
 import categoriesReducer from './categoriesReducer.js';
+import pendingReducer from './pendingReducer.js';
 
 
 const subreducers = {
   posts: postsReducer,
   categories: categoriesReducer,
+  pending: pendingReducer
 }
 
 const reducer = combineReducers(subreducers);

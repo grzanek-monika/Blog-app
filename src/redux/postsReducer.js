@@ -1,5 +1,6 @@
 import { nanoid } from "nanoid";
 import { API_URL } from "../config";
+import { updatePending } from "./pendingReducer";
 
 //selectors
 export const getAllPosts = (state => state.posts);
@@ -36,9 +37,13 @@ export const editPost = payload => ({ type: EDIT_POST, payload });
 
 export const fetchPosts = () => {
   return (dispatch) => {
+    dispatch(updatePending(true));
     fetch(`${API_URL}/posts`)
       .then(res => res.json())
-      .then(posts => dispatch(updatePosts(posts)));
+      .then(posts => {
+        dispatch(updatePosts(posts));
+        dispatch(updatePending(false));
+      });
   }
 }
 

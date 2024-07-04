@@ -35,6 +35,15 @@
       "shortDescription": "Test of short description....",
       "content": "<p>Test</p>",
       "id": "AgVo1Al"
+    },
+    {
+      "title": "Title V",
+      "author": "Peter Wilson",
+      "publishedDate": "2024-06-11T22:00:00.000Z",
+      "category": "Art",
+      "shortDescription": "Short description about art.",
+      "content": "<p><strong>Test</strong></p>",
+      "id": "btgCg7V"
     }
   ],
   "categories": [
